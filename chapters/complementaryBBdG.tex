@@ -1,0 +1,245 @@
+% !TeX root = ../main.tex
+
+\chapter{玻色型BdG方程本征问题的一般性质}\label{bbdgdiscussion}
+对于一个一般的玻色型BdG哈密顿量，
+\begin{equation}
+  \hat H=\frac{1}{2}\alpha^\dagger M\alpha -\frac{1}{2}\Tr A,\label{h}
+\end{equation}
+这里矩阵$M$的一般形式为
+\begin{equation}
+  M=\begin{bmatrix}
+      A & B\\
+      B^* & A^*
+  \end{bmatrix},\quad A=A^\dagger, \quad B=B^T.\label{Mdef}
+\end{equation}
+如正文中式\eqref{heffeq}指出，我们需要求解如下矩阵的本征值问题
+\begin{equation}
+  \Sigma_3 M=\begin{bmatrix}
+      A & B\\
+      -B^* & -A^*
+  \end{bmatrix},\label{mm}
+\end{equation}
+即
+\begin{equation}
+  \Sigma_3 M V^n = \omega_n V^n\label{epro}
+\end{equation}
+这里向量$V^n$是非厄秘矩阵$\Sigma_3 M$的右本征向量，其对应的本征值是$\omega_n$。我们可以把它写成
+\begin{equation}
+  V^n = \begin{bmatrix}
+      X^n \\
+      Y^n
+  \end{bmatrix},\label{vxy}
+\end{equation}
+于是这个本征问题变成
+\begin{subequations}
+    \begin{align}
+        A X^n + B Y^n &= \omega_n X^n,\\
+        B^* X^n + A^* Y^n & = -\omega_n Y^n
+    \end{align}
+\end{subequations}
+以下我们列出八条关于这个本征问题的性质，并给出证明。
+\begin{proposition}
+    给定式\eqref{epro}和式\eqref{vxy}，那么
+    \begin{equation}
+  \bar V^n := V^{n\dagger}\Sigma_3 = \begin{bmatrix}
+      X^{n*} & -Y^{n*}
+  \end{bmatrix}
+\end{equation}
+是非厄秘矩阵\eqref{mm}的一个左本征向量，其对应的本征值是$\omega_n^*$。
+\end{proposition}
+\begin{proof}
+    我们直接计算
+    \begin{equation}
+  \bar V^n \Sigma_3 M=V^{n\dagger} M = (M^T V^{n*})^T = (M^* V^{n*})^T = \omega^*_n V^{n\dagger} \Sigma_3 = \omega^*_n \bar V^n.
+\end{equation}
+\end{proof}
+
+\begin{proposition}\label{prop2}
+    给定式\eqref{epro}和式\eqref{vxy}，那么
+    \begin{equation}
+  \Sigma_1 V^{n*} = \begin{bmatrix}
+      Y^{n*} \\
+       X^{n*}
+  \end{bmatrix}
+\end{equation}
+是非厄秘矩阵\eqref{mm}的一个右本征向量，其对应的本征值是$-\omega_n^*$.
+\end{proposition}
+\begin{proof}
+    取式\eqref{epro}的复共轭，并利用矩阵$M$的粒子-空穴对称性，见式\eqref{phs}，我们有
+    \begin{equation}
+  \omega^*_n V^{n*} = \Sigma_3 M^* V^{n*} = \Sigma_3 \Sigma_1 M \Sigma_1 V^{n*}= -\Sigma_1\Sigma_3 M \Sigma_1 V^{n*}.
+\end{equation}
+再在上式两端从左边乘上$\Sigma_1$即可。
+\end{proof}
+
+\begin{proposition}\label{prop3}
+    给定式\eqref{epro}和式\eqref{vxy}，以及类似地给定$V^m$和$\omega_m$。如果$\omega_m\neq \omega^*_n$，那么$\bar V^m = V^{m\dagger} \Sigma_3$，作为一个左本征向量（对应的本征值是$\omega_m^*$)，是和右本征向量$V^n$正交的。
+\end{proposition}
+
+\begin{proof}
+    从右边在
+    \begin{equation}
+  \bar V^m \Sigma_3 M = \omega_m^* \bar V^m
+\end{equation}
+两端乘上$V^n$，同时从左边在
+\begin{equation}
+  \Sigma_3 M V^n = \omega_n V^n
+\end{equation}
+两端乘上$\bar V^m$，然后将两式相减，我们得到
+\begin{equation}
+  0=(\omega^*_m - \omega_n ) \bar V^m V^n.
+\end{equation}
+如果$\omega^*_m - \omega_n\neq 0$,那么上式成立的条件就是$\bar V^m$和$V^n$正交。
+\end{proof}
+\begin{corollary}\label{coro4}
+    所有本征值是复数的的本征向量的范数(norm)都是零，当用$\Sigma_3$作为度规（metric）时。
+\end{corollary}
+\begin{proof}
+    注意到当用$\Sigma_3$作为度规时，本征向量的范数是
+    \begin{equation}
+  V^{n\dagger}\Sigma_3 V^n = \bar V^n V^n,
+\end{equation}
+而等式右边在其对应的本征值是复数时等于零是命题\ref{prop3}给出的。
+\end{proof}
+
+\begin{proposition}
+    对于一个本征值为零的右本征向量，我们定义一个关联的向量$Q$，
+    \begin{equation}
+  \Sigma_3 M Q = -\iu \frac{P}{\mu},\label{defq}
+\end{equation}
+这里$\mu$是一个正实数。$P$和$Q$与所有非零本征值对应的右本征向量都正交，当用$\Sigma_3$作为度规时。
+\end{proposition}
+
+\begin{proof}
+    当用$\Sigma_3$作为度规时，$P$与所有非零本征值对应的右本征向量都正交是由命题\ref{prop3}直接得到的。在式\eqref{defq}两端从左边乘上$V^{n\dagger} \Sigma_3$，我们得到
+    \begin{equation}
+  \omega^*_n V^{n\dagger} \Sigma_3 Q= 0.
+\end{equation}
+所以如果$\omega_n\neq 0$，那么$Q$和$\bar V^n$正交，当用$\Sigma_3$作为度规时。
+\end{proof}
+
+注意我们假设$Q$是与$P$线性独立的。
+
+\begin{proposition}\label{prop6}
+    如果矩阵$M$是半正定的，那么$\Sigma_3 M$的所有本征值都是实数。本征值是正数、零或者负数所对应的本征向量关于度规$\Sigma_3$的范数是正数、零或者负数。
+\end{proposition}
+
+\begin{proof}
+    因为矩阵$M$是半正定的，所以它的所有本征值都是大于等于零的。在式\eqref{epro}两端从左边乘上$V^{n\dagger}\Sigma_3$，我们得到
+    \begin{equation}
+  0\ge V^{n\dagger} M V^n = \omega_n V^{n \dagger} \Sigma_3 V^n.
+\end{equation}
+首先注意到上式左边取到等号时$V^n$必是$M$的一个对应本征值为零的本征向量，所以其自然也是$\Sigma_3 M$的一个对应本征值为零的本征向量。如果$\omega_n\neq 0$,我们自然有，本征值与本征向量关于度规$\Sigma_3$的范数同号的结论。特别地，如果$\omega_n$是复数，那么根据推论\ref{coro4}右式等于零，即取到等号从而导出$\omega_n=0$，这与假设矛盾。所以本征值必为实数。
+
+假设$\omega_n=0$，在式\eqref{defq}两端从左边乘上$P^\dagger \Sigma_3$，
+\begin{equation}
+  P^\dagger M Q = -\iu \frac{P^\dagger \Sigma_3 P}{\mu}.
+\end{equation}
+由于$M$是厄秘的，$P^\dagger$是$M$的一个对应与本征值为零的左本征向量。所以上式左边为零，即对应的本征向量关于度规$\Sigma_3$的范数为零。
+
+\end{proof}
+
+假设$M$是半正定的，由命题\ref{prop2}可知，给定一个对应于本征值$\omega_n>0$的右本征向量$V^n$，我们有
+\begin{equation}
+  W^n = \Sigma_1 V^{n*}
+\end{equation}
+也是一个右本征向量，对应的本征值是$-\omega_n$. 我们把非零的本征向量分成$\pm \omega_n$这样的对，其中$\omega_n>0$。由命题\ref{prop6}，我们把正本征值对应的本征向量$V^n$归到$+1$，负本征值的对应的本征向量$W^n$归到$-1$。注意他们彼此也是关于度规$\Sigma_3$正交。
+
+\begin{proposition}
+    如果$M$是半正定的，那么$P$和$Q$可以满足如下关系：
+    \begin{equation}
+  Q^\dagger M Q= \frac{1}{\mu} ,\quad Q^\dagger \Sigma_3 P =\iu ,\quad Q^\dagger \Sigma_3 Q=0. \label{propQ}
+\end{equation}
+并且有
+\begin{equation}
+  P=-\Sigma_1 P^*, \quad Q=-\Sigma_1 Q^*.\label{PQ}
+\end{equation}
+
+\end{proposition}
+
+\begin{proof}
+    在式\eqref{defq}两端从左边乘上$Q^\dagger \Sigma_3$，得到
+    \begin{equation}
+  0\leq Q^\dagger M Q = -\frac{\iu}{\mu}Q^\dagger \Sigma_3 P.
+\end{equation}
+注意如果$Q\propto P$则上式右边为零，但是我们已经假设$P$和$Q$线性独立。所以式\eqref{propQ}中前两个条件是合法的。注意到我们总可以给$Q$中加一个正比于$P$的项，使$Q$的关于度规$\Sigma_3$的范数为零，即式\eqref{propQ}中的最后一个条件是合法的。
+
+由命题\ref{prop2}我们知道$\Sigma_1 P^*$也是矩阵$\Sigma_3 M$的一个本征值为零的右本征向量，并且易证$\Sigma_1 P^*\propto P$。即式\eqref{PQ}中的第一个条件是合法的。利用$M$的粒子-空穴对称性，易证$-\Sigma_1 Q^*$也是一个如$Q$一样，关联于$P$的向量。且易证$\Sigma_1 Q^* \propto Q$.所以式\eqref{PQ}中的第二个条件也是合法的。
+\end{proof}
+
+注意到式\eqref{PQ}暗示
+\begin{equation}
+  P=\begin{bmatrix}
+      P_i\\
+      -P^*_i
+  \end{bmatrix},\quad Q=\begin{bmatrix}
+      Q_i\\
+      -Q_i^*
+  \end{bmatrix}
+\end{equation}
+我们定义两个向量
+\begin{equation}
+  V^0=\frac{1}{\sqrt{2}}(P+\iu Q),\quad W^0=-\frac{1}{\sqrt{2}}(P-\iu Q).
+\end{equation}
+由式\eqref{defq}和式\eqref{PQ}，易证
+\begin{equation}
+  W^0 = \Sigma_1 V^{0*},\quad MV^0 = MW^0 = \frac{1}{2\mu}\Sigma_3 (V^0 - W^0).
+\end{equation}
+并且，用推论\ref{coro4}和式\eqref{propQ}，我们可以得到新向量的归一条件
+\begin{equation}
+  V^{0\dagger} \Sigma_3 V^0 = 1,\quad W^{0\dagger}\Sigma_3 W^0 =-1 ,\quad V^{0\dagger} \Sigma_3 W^0 =0.
+\end{equation}
+所以这些新向量很像$V^n$和$W^n$，但是他们不是矩阵$\Sigma_3 M$的本征向量。
+
+\begin{proposition}
+    如果矩阵$\Sigma_3 M$所有本征值都是实数，那么向量$V^n$和$W^n$（包括$n=0$），是线性独立的，并且满足关系
+    \begin{equation}
+  \sum_{n\geq 0} (V^n V^{n\dagger} \Sigma_3 -W^n W^{n\dagger} \Sigma_3) = \sum_{n>0} (V^n V^{n\dagger} \Sigma_3 -W^n W^{n\dagger} \Sigma_3) + \iu QP^\dagger \Sigma_3 -\iu PQ^\dagger \Sigma_3 =1.\label{roi}
+\end{equation}
+
+\end{proposition}
+\begin{proof}
+    对于以下方程
+    \begin{equation}
+  \sum_{n\geq 0} (c_n V^n +d_n W^n )=0,
+\end{equation}
+其成立的条件是所有系数$c_n$和$d_n$都为零。这是因为我们可以对上式在两端从左边依次乘上$V^{n\dagger}\Sigma_3$和$W^{n\dagger}\Sigma_3$，然后用他们的正交关系。所以这证明了这些向量的线形无关性。
+
+同时正交关系也暗示了上式作用在任意向量$V^n$或$W^n$给出这个向量本身。由于这里独立向量的个数等于矩阵$M$的维数，所以这证明了上式是一个单位分解。
+\end{proof}
+
+现在我们把$M$从右边作用到式\eqref{roi}的两端，有
+\begin{equation}
+  M = \sum_{n> 0} \omega_n (\Sigma_3 V^n V^{n\dagger} \Sigma_3 +\Sigma_3 W^n W^{n\dagger} \Sigma_3) +\frac{1}{\mu}\Sigma_3 PP^\dagger \Sigma_3.
+\end{equation}
+于是式\eqref{h}变成
+\begin{equation}
+  \hat H=\frac{1}{2}\sum_{n>0} \omega_n [(\alpha^\dagger \Sigma_3 V^n) (V^{n\dagger} \Sigma_3 \alpha )+(\alpha^\dagger \Sigma_3 W^n)(W^{n\dagger}\Sigma_3 \alpha)]+\frac{1}{2\mu}(\alpha^\dagger \Sigma_3 P)(P^\dagger \Sigma_3 \alpha)-\frac{1}{2}\Tr A.\label{h1}
+\end{equation}
+我们定义quasiparticle的湮灭（产生）算符$b^{(\dagger)}_n$如下
+\begin{subequations}
+    \begin{align}
+        b^\dagger_n &= \alpha^\dagger \Sigma_3 V^n = -W^{n\dagger} \Sigma_3 \alpha = \sum_i (X^n_i a_i^\dagger -Y^n_i a_i),\\
+        b_n &= V^{n\dagger}\Sigma_3 \alpha = -\alpha^\dagger \Sigma_3 W^n = \sum_i (X^{n*}_i a_i -Y^{n*}_i a_i^\dagger).
+    \end{align}
+\end{subequations}
+注意命题\ref{prop6}给出的正交归一可以用来证明这些quasiparticle也满足玻色对易关系。现在式\eqref{h1}变成
+\begin{equation}
+  \hat H=\sum_{n>0} \omega_n b_n^\dagger b_n + \frac{\mathsf P^2}{2\mu}+\frac{1}{2}\sum_{n>0} \omega_n -\frac{1}{2}\Tr A.\label{h2}
+\end{equation}
+这里$\mathsf P$是厄秘的动量算符，被定义为
+\begin{equation}
+  \mathsf P=\alpha^\dagger \Sigma_3 P.
+\end{equation}
+对比式\eqref{Mdef}和式\eqref{h1}，我们可以把$A$和$B$矩阵用$X$，$Y$和$P$表示，
+\begin{subequations}
+    \begin{align}
+        A_{ij} &=\sum_{n>0} \omega_n (X_i^n X_j^{n*} +Y_i^n Y_j^{n*}) +\frac{1}{\mu}P_i P_j^*,
+        B_{ij} &= -\sum_{n>0} \omega_n (X_i^n Y_j^{n*} +Y_i^{n*}X_j^n)-\frac{1}{\mu}P_iP_j^*.
+    \end{align}
+\end{subequations}
+同时，式\eqref{h2}可以等价地写为
+\begin{equation}
+  \hat H=\sum_{n>0} \omega_n b_n^\dagger b_n + \frac{\mathsf P^2}{2\mu} - \sum_{n>0} \omega_n Y^{n\dagger}Y^n-\frac{P^\dagger P}{2\mu}.
+\end{equation}
+上式表面，独立的振子（简振模）表示震动模式，其对应的能量由矩阵$\Sigma_3 M$的正的本征值给出。动能项$\mathsf P^2/2\mu$以独立的没有恢复力的模式出现，它们和矩阵$\Sigma_3 M$的本征值为零的本征向量相关，而且它们通常是连续对称性破缺所对应的集体激发。

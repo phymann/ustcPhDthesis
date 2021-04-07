@@ -1,0 +1,318 @@
+% !TeX root = ../main.tex
+
+\chapter{一般二次型哈密顿量的求解}\label{ch2}
+
+\section{Bogoliubov变换}
+
+\subsection{实空间}
+假设一个系统的单粒子态的维数$N$是有限的，其对应的湮灭（产生）算符记为$a^{(\dagger)}_i$, $i=1,2\dots,N$. 我们定义一个列向量（通常被称作nambu spinor），
+\begin{equation}
+  \alpha := \begin{bmatrix}
+      a\\
+      a^\dagger
+  \end{bmatrix},
+\end{equation}
+它的第$i$个和第$N+i$个元素分别是，$\alpha_i=a_i$和$\alpha_{i+N}=a^\dagger_{i}$, $i=1,2,\dots,N$. 它的厄秘共轭被定义为
+\begin{equation}
+  \alpha^\dagger:=\begin{bmatrix}
+      a^\dagger & a
+  \end{bmatrix}.
+\end{equation}
+注意我们可以用矩阵$\Sigma_1=\sigma_1\otimes I_N$来交换湮灭和产生算符的位置
+\begin{equation}
+  \Sigma_1 \alpha = \begin{bmatrix}
+      a^\dagger \\
+      a
+  \end{bmatrix},\quad \alpha^\dagger \Sigma_1 = \begin{bmatrix}
+      a & a^\dagger
+  \end{bmatrix}.
+\end{equation}
+算符的对易关系在该表象下有非常简洁的形式，
+\begin{equation}
+  [\alpha_\mu,\alpha^\dagger_\nu]_\varepsilon :=\alpha_\mu\alpha^\dagger_\nu +\varepsilon \alpha^\dagger_\nu \alpha_\mu=[\tilde \Sigma_3]_{\mu\nu},
+\end{equation}
+这里
+\begin{equation}
+  \tilde \Sigma_3=\begin{bmatrix}
+      I_N & \\
+      & \varepsilon I_N
+  \end{bmatrix},\quad \varepsilon=\begin{cases}
+      +\text{，对于费米子；}\\
+      -\text{，对于玻色子。}
+  \end{cases}
+\end{equation}
+
+一个一般的均一的变换被定义为
+\begin{equation}
+  \begin{bmatrix}
+      b\\
+      b^\dagger
+  \end{bmatrix}=\begin{bmatrix}
+      U & \varepsilon V\\
+      \varepsilon Y & X
+  \end{bmatrix}\begin{bmatrix}
+      a\\
+      a^\dagger
+  \end{bmatrix},
+\end{equation}
+或者简写成$\beta=T\alpha$。我们仍要求变换后的Nambu spinor的厄秘共轭有如下形式，
+\begin{equation}
+  \beta^\dagger := \begin{bmatrix}
+      b^\dagger & b
+  \end{bmatrix} = \alpha^\dagger \Sigma_1 T^T \Sigma_1.
+\end{equation}
+注意到$\beta^\dagger = (T\alpha)^\dagger$，结合上式，我们得到一个关于变换矩阵的条件：
+\begin{equation}
+  T^*=\Sigma_1 T \Sigma_1,\label{her}
+\end{equation}
+也即
+\begin{equation}
+  X=U^*,\quad Y=V^*.
+\end{equation}
+因此我们一般地总把这个变换矩阵表示为
+\begin{equation}
+  \boxed{
+  T=\begin{bmatrix}
+      U & \varepsilon V\\
+      \varepsilon V^* & U^*
+  \end{bmatrix}.}
+\end{equation}
+
+
+正则变换的定义是要求对易关系不变，
+\begin{equation}
+  [\beta_\mu,\beta^\dagger_\nu]_\varepsilon = [\tilde \Sigma_3]_{\mu\nu}.
+\end{equation}
+易知这个条件对变换矩阵$T$加了如下限制：
+\begin{equation}
+  T\tilde \Sigma_1 T^T=\tilde \Sigma_1,\quad \tilde\Sigma_1=\tilde\Sigma_3\Sigma_1=\begin{bmatrix}
+      0 & I_N\\
+      \varepsilon I_N & 0
+  \end{bmatrix}\label{can}
+\end{equation}
+这样的变换通常也被称为Bogoliubov变换。 进一步的，通过一个Cayley变换，
+\begin{equation}
+  T\rightarrow T'=UTU^{-1},\quad U=\frac{1}{\sqrt{2}}\begin{bmatrix}
+      I_N & I_N\\
+      -\symup{i} I_N & \symup{i} I_N
+  \end{bmatrix},
+\end{equation}
+式\eqref{can}变成
+\begin{equation}
+  T' \eta T^{\prime T}=\eta
+\end{equation}
+其中对于费米子$\eta = I_{2N}$，而对于玻色子$\eta=\symup{i}\Sigma_2=\symup{i}\sigma_2\otimes I_N$。所以Bogoliubov变换分别属于$\mathrm{O}(2N,\mathbb C)$和$\mathrm{Sp}(2N,\mathbb C)$.
+
+结合式\eqref{her}和式\eqref{can}，我们得到
+\begin{equation}
+  T \tilde \Sigma_3 T^\dagger = T^\dagger \tilde \Sigma_3 T =\tilde \Sigma_3.
+\end{equation}
+注意到对于费米子这个Bogoliubov变换是幺正的，而对于玻色子它是赝幺正的（pseudounitary）。最后，逆变换可由上式直接得到
+\begin{equation}
+  \boxed{T^{-1}=\tilde \Sigma_3 T^\dagger \tilde \Sigma_3 = \begin{bmatrix}
+      U^\dagger & V^T\\
+      V^\dagger & U^T
+  \end{bmatrix}.}
+\end{equation}
+
+\subsection{动量空间}
+
+假设上小节提到的单粒子态$i$由外指标$j=1,\dots,M$和内指标$l=1,\dots,K$组成，这里我们自然有$K=N/M$。则湮灭（产生）算符$a_i^{(\dagger)}$也可以等价地写成$a_{jl}^{(\dagger)}$。假设周期性边界条件，通过Fourier变换我们有
+\begin{equation}
+  a_{\vb{k} l }= \frac{1}{\sqrt{M}} \sum_j a_{jl} \eu^{\iu \vb{k} \cdot \vb{r}_j },
+\end{equation}
+同时Nambu spinor变成
+\begin{equation}
+  \alpha_{\vb k} = \frac{1}{\sqrt{M}} \sum_{j} \alpha_j \eu^{\iu \vb k\cdot \vb r_j}=\begin{bmatrix}
+      a_{\vb k}\\
+      a^\dagger_{-\vb k}
+  \end{bmatrix}.
+\end{equation}
+考虑一个一般的均一的在$\vb k$空间对角的变换
+\begin{equation}
+  \begin{bmatrix}
+      b_{\vb k}\\
+      b^\dagger_{-\vb k}
+  \end{bmatrix}=\begin{bmatrix}
+      U_{\vb k} & \varepsilon V_{\vb k}\\
+      \varepsilon Y_{\vb k} & X_{\vb k}
+  \end{bmatrix}\begin{bmatrix}
+a_{\vb k}\\
+a^\dagger_{-\vb k}
+\end{bmatrix},
+\end{equation}
+或简写为$\beta_{\vb k} = T_{\vb k}\alpha_{\vb k}$。我们仍要求变换后的Nambu spinor的厄秘共轭有如下形式，
+\begin{equation}
+  \beta^\dagger_{\vb k} := \begin{bmatrix}
+      b_{\vb k}^\dagger & b_{-\vb k}
+  \end{bmatrix}=\alpha_{\vb k}^\dagger \Sigma_1 T^T_{-\vb k} \Sigma_1.
+\end{equation}
+注意到$\beta^\dagger_{\vb k}=(T_{\vb k}\alpha_{\vb k})^\dagger$，结合上式，我们得到一个关于变换矩阵的条件：
+\begin{equation}
+  T^*_{\vb k}=\Sigma_1 T_{-\vb k} \Sigma_1,\label{her1}
+\end{equation}
+也即，
+\begin{equation}
+  X_{\vb k}=U^*_{-\vb k},\quad Y_{\vb k}=V^*_{-\vb k}.
+\end{equation}
+注意这个条件是联系点反演（inversion）对称的两个动量的。因此我们一般地总把这个变换矩阵表示为
+\begin{equation}
+  \boxed{
+  T=\begin{bmatrix}
+      U_{\vb k} & \varepsilon V_{\vb k}\\
+      \varepsilon V_{-\vb k}^* & U_{-\vb k}^*
+  \end{bmatrix}}
+\end{equation}
+
+正则变换的要求
+\begin{equation}
+  [\beta_{\vb k\mu},\beta_{\vb p,\nu}^\dagger]_\varepsilon = \delta_{\vb k\vb p}\tilde [\Sigma_3]_{\mu\nu}
+\end{equation}
+现在变为如下的关于变换矩阵的条件：
+\begin{equation}
+  T_{\vb k}\tilde \Sigma_1 T^T_{-\vb k}=\tilde \Sigma_1.\label{can1}
+\end{equation}
+注意这个关系仍是联系点反演对称的两个动量的，这样的变换被称为bogoliubov变换的动量空间表示。
+
+结合式\eqref{her1}和式\eqref{can1}，我们得到（负负得正，我们回到了一个关于同一动量的关系式）
+\begin{equation}
+  T_{\vb k}\tilde \Sigma_3 T_{\vb k}^\dagger = T_{\vb k}^\dagger \tilde \Sigma_3 T_{\vb k} = \tilde \Sigma_3.\label{tkpu}
+\end{equation}
+所以动量空间的Bogoliubov变换对于费米子仍是幺正的，对于玻色子仍是赝幺正的。最后，逆变换可由上式直接得到
+\begin{equation}
+  \boxed{
+  T^{-1}_{\vb k}=\begin{bmatrix}
+      U^\dagger_{\vb k} & V^T_{\vb k}\\
+      V^\dagger_{\vb k} & U^T_{\vb k}
+  \end{bmatrix}.}
+\end{equation}
+
+\section{对角化二次型哈密顿量}
+
+\subsection{实空间}
+
+一个一般的二次型哈密顿量总可以表示成如下形式：
+\begin{equation}
+  \hat H = a^\dagger_i A_{ij} a_j + \bigg( \frac{1}{2} a^\dagger_i B_{ij} a_j^\dagger + \hc \bigg),
+\end{equation}
+注意这里的两个矩阵$A$和$B$分别是厄秘的和对称的（对于玻色子）、反对称的（对于费米子），
+\begin{equation}
+  A=A^\dagger,\quad B^T=-\varepsilon B.\label{AB}
+\end{equation}
+这个哈密顿量在Nambu spinor表象变成
+\begin{equation}
+  \hat H=\frac{1}{2} \alpha^\dagger H_\bdg \alpha +\frac{\varepsilon}{2}\Tr A.
+\end{equation}
+注意到这里的$H_\bdg$自带一个粒子-空穴对称性，
+\begin{equation}
+  H^*_\bdg=-\varepsilon \Sigma_1 H_\bdg \Sigma_1.\label{phs}
+\end{equation}
+考虑一个Bogoliubov变换满足如下性质
+\begin{equation}
+  T\tilde H_\eff T^{-1} = \begin{bmatrix}
+      \Omega & \\
+      & -\Omega^*
+  \end{bmatrix}=:D,\label{heffeq}
+\end{equation}
+其中$\Omega$是一个对角阵, 有效哈密顿量的定义是$H_\eff = \tilde\Sigma_3 H_\bdg$。这里对角矩阵$D$的元素成对出现是由于粒子-空穴对称性\footnote{这个证明是直接的：由式\eqref{phs}可得有效哈密顿量$H_\eff$也满足一个粒子-空穴对称性$H_\eff^* = -\Sigma_1 H_\eff \Sigma_1$。假设我们有一个本征值$\omega$和对应的本征态$\ket{u}$, $H_\eff \ket{u} = \omega \ket{u}$, 那么由于粒子-空穴对称性，我们有
+\begin{equation}
+  H_\eff (\Sigma_1 K \ket{u}) =-\omega^* (\Sigma_1 K\ket{u}),
+\end{equation}
+这里$K$是复共轭算符。即$-\omega^*$和$\Sigma_1 K\ket{u}$也是系统的本征值和对应的本征态。
+}。经过这个Bogoliubov变换，式\eqref{phs}变成
+\begin{equation}
+  \hat H=b^\dagger \Omega b- \frac{\varepsilon}{2}\Tr \Omega +\frac{\varepsilon}{2}\Tr A.
+\end{equation}
+注意这个本征问题
+\begin{equation}
+  H_\eff T^{-1} = T^{-1} D,
+\end{equation}
+对于费米子来说是平凡的，因为$H_\eff=H_\bdg$是厄秘矩阵；对于玻色子，$H_\eff=\Sigma_3 H_\bdg$一般来说是一个非厄秘矩阵，对应的本征问题需要一些额外讨论，我们在附录\ref{bbdgdiscussion}给出。
+
+\subsection{动量空间}
+对于一个一般的实空间的二次型哈密顿量，
+\begin{equation}
+  \hat H=\sum_{jlmn}\bqty{a_{jl}^\dagger A_{jl,mn} a_{mn}+ \pqty{\frac{1}{2}a_{jl}^\dagger B_{jl,mn} a^\dagger_{mn} + \hc} }.
+\end{equation}
+其中我们用$j,m$表示实空间坐标，$l,n$表示内部自由度的指标。假设周期性边界条件，即有$A_{jl,mn}=A_{j-m,ln}$和$B_{jl,mn}=B_{j-m,ln}$，我们可以利用一个傅立叶变换得到
+\begin{equation}
+  \hat H= \sum_{\vb k} \bqty{\alpha^\dagger_{\vb k} A_{\vb k} a_{\vb k} +\pqty{\frac{1}{2}a_{\vb k}^\dagger B_{\vb k} a_{-\vb k}^\dagger +\hc}}.
+\end{equation}
+其中矩阵$A$和$B$的矩阵元是$[A_{\vb k}]_{ln}= \sum_{j-m} \eu^{\iu \vb k\cdot (\vb r_j-\vb r_m)} A_{j-m,ln} $和$[B_{\vb k}]_{ln}=\sum_{j-m} \eu^{\iu \vb k\cdot (\vb r_j-\vb r_m)} A_{j-m,ln} $。注意式\eqref{AB}对应到这里变为
+\begin{equation}
+  A_{\vb k}=A^\dagger_{\vb k},\quad B_{\vb k}^T = -\varepsilon B_{-\vb k}.
+\end{equation}
+在Nambu spinor表象下，我们可进一步将哈密顿量写成
+\begin{equation}
+  \hat H = \frac{1}{2}\sum_{\vb k} \alpha_{\vb k}^\dagger H_{\vb k}^{\bdg} \alpha_{\vb k} + \sum_{\vb k}\frac{\varepsilon}{2}\Tr A_{\vb k}.\label{hbdgk}
+\end{equation}
+其中BdG矩阵是
+\begin{equation}
+  H_{\vb k}^\bdg = \begin{bmatrix}
+      A_{\vb k} & B_{\vb k}\\
+      -\varepsilon B_{-\vb k}^* & -\varepsilon A^T_{-\vb k}
+  \end{bmatrix}.\label{hkbdg}
+\end{equation}
+注意这个矩阵也满足一个粒子-空穴对称性
+\begin{equation}
+  H_{\vb k}^* =- \varepsilon\Sigma_1 H_{-\vb k} \Sigma_1.\label{phshk}
+\end{equation}
+对每个给定的$\vb k$，考虑满足如下条件的Bogoliubov变换
+\begin{equation}
+  T_{\vb k}H^\eff_{\vb k} T^{-1}_{\vb k} = \begin{bmatrix}
+      \Omega_{\vb k} & \\
+      & -\Omega_{-\vb k}^* 
+  \end{bmatrix}=: D_{\vb k}\label{deftk}
+\end{equation}
+其中$H^\eff_{\vb k}= \tilde \Sigma_3 H_{\vb k}$，$\Omega_{\vb k}$是对角阵，这里对角阵$D$的元素成对出现是由于粒子-空穴对称性\footnote{
+这个证明是直接的：由于式\eqref{phshk}，有效哈密顿量也有一个粒子-空穴对称性，$(H^\eff_{\vb k})^* = -\Sigma_1 H^\eff_{-\vb k} \Sigma_1$。假设$H^\eff_{\vb k}$有一个右本征向量$\ket{u_{\vb k}}$，其对应的本征值是$\omega_{\vb k}$，即
+\begin{equation}
+  H^\eff_{\vb k}\ket{u_{\vb k}} = \omega_{\vb k} \ket{u_{\vb k}},
+\end{equation}
+那么我们有（先对上式两端取复共轭，再利用粒子-空穴对称性）
+\begin{equation}
+  H^\eff_{-\vb k}\Sigma_1 K\ket{u_{\vb k}}=-\omega_{\vb k}^* \Sigma_1 K \ket{u_{\vb k}}.
+\end{equation}
+这里$K$是复共轭算符。所以$\Sigma_1 K \ket{u_{-{\vb k}}}$也是一个右本征向量，其对应的本征值是$-\omega_{-\vb k}^*$。
+} 。式\eqref{hbdgk}通过这个Bogoliubov变换变成
+\begin{equation}
+  \hat H=\sum_{\vb k} \pqty{b_{\vb k}^\dagger \Omega_{\vb k} b_{\vb k} -\frac{\varepsilon}{2} \Tr \Omega_{\vb k} +\frac{\varepsilon}{2} \Tr A_{\vb k}}.
+\end{equation}
+
+\section{数值算法}
+最后我们给出一个数值算法求变换矩阵$T$。注意对于给定$\vb k$，$T_{\vb k}$的求解和$T$是一样的，所以以下我们只讨论前者。第一步是直接求$H^\eff$的本征值问题，这一步是直接的，比如在Mathematica中可直接调用内置函数Eigensystem完成。假设这步已经完成，我们得到正交归一的本征向量组，
+\begin{equation}
+  T^{-\dagger} T^{-1} = I_{2N}.
+\end{equation}
+注意一般地，我们需要满足以下两个条件，
+\begin{subequations}
+    \begin{align}
+        T^{-1} DT &=H^\eff,\label{cond1t} \\
+        T\tilde \Sigma_3 T^\dagger &= \tilde \Sigma_3.\label{cond2t}
+    \end{align}
+\end{subequations}
+假设我们有$m$个不同的本征值，每个的简并度是$d_j$，这里$j=1,2,\dots,m$。于是我们有$2N=\sum_{j=1}^m d_j$。接下来我们先重新排列这些得到的本征向量，让所有简并的组在一起。这样我们的任务就变成了找到一个块对角矩阵$F$，它包含$m$个块，每个大小为$d_j\times d_j$。而新的变换矩阵被定义为$\tilde T= F^{-1} T$。注意式\eqref{cond1t}是自动满足的；而式\eqref{cond2t}暗示
+\begin{equation}
+  F\tilde \Sigma_3 F^\dagger = (T^{-\dagger} \tilde \Sigma_3 T^{-1})^{-1} =: G.
+\end{equation}
+注意这里我们假设了没有本征值为零。对于每个块，上式对应于这样一个矩阵方程，
+\begin{equation}
+  [\tilde \Sigma_3]_{jj} F_j F^\dagger_j = (T_j^{-\dagger} \tilde \Sigma_3 T_j^{-1} )^{-1} =: G_j.
+\end{equation}
+这里$T_j^{-1}$是一个$2N\times d_j$的矩阵，属于本征空间$j$。所以我们必须解这样一个本征问题$G_j = V_j D_j V^{-1}_j$，从而有
+\begin{equation}
+  F_j = V_j \sqrt{[\tilde \Sigma_3]_{jj} D_j} V_j^{-1}.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
