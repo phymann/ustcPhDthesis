@@ -329,7 +329,8 @@ $W^{\textnormal{hole}}_{\vb k}=\Sigma_1 (W_{-\vb k}^{\textnormal{particle}})^*\S
 所以它们有相同的Wannier中心流动行为。 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{平均场计算和对称性分析}\label{mfs}
+\section{平均场计算和对称性分析}
+\label{mfs}
 在这一节，我们给出第三章中提到的两个模型的平均场计算细节。
 特别地，
 我们考虑一个更一般性地相互作用项，
@@ -401,10 +402,11 @@ GP能量泛函简化为
 通过模拟退火算法，我们也直接数值地最小化式\eqref{hmf}，与上述分析吻合，见图\ref{KMBHtheta}%
 \begin{figure}
 	\includegraphics[width=.95\textwidth]{FIGthetabar.pdf}
-	\caption{\label{KMBHtheta}KMBH模型的平均场解，$\theta=2\arctan(\rho_3/\rho_1)$，对于不同的子晶格失衡$\lambda_v$和相互作用强度乘粒子数密度$nU$。左（右）图是种间相互作用各向异性$\lambda>0$（$\lambda>0$）。
+	\caption{KMBH模型的平均场解，$\theta=2\arctan(\rho_3/\rho_1)$，对于不同的子晶格失衡$\lambda_v$和相互作用强度乘粒子数密度$nU$。左（右）图是种间相互作用各向异性$\lambda>0$（$\lambda>0$）。
 	离散点来自利用模拟退火数值最小化式\eqref{hmf}。实线来自最小化式\eqref{egp}和式\eqref{egp1}。
 	注意虽然$\bar\theta$对于$\lambda>1$和$\lambda<1$有相似行为，
 	系统基态一个处在Z顺磁态一个处在XY顺磁态。}
+	\label{KMBHtheta}
 \end{figure}
 上述平均场的结果表明随着一个正的（负的）子晶格势被开启，$\bar \theta$从$\pi/2$开始减小（增大），
 这个物理上就是指更多的玻色子会凝聚到$A$（$B$）子晶格。
@@ -456,12 +458,13 @@ $\Gamma_{13}$和$\Gamma_{45}$到出现导致了赝时间反演对称性的缺失
 在图\ref{KMBHwithoutPTRS}%
 \begin{figure}
 	\includegraphics[width=.95\textwidth]{FIGbkmwithoutPTRS.pdf}
-	\caption{\label{KMBHwithoutPTRS}对于在一个带状几何上的KMBH模型的Bogoliubov激发谱，这里一共有$64$晶胞（每个包含$64$个各点），用的zigzag边界，
+	\caption{对于在一个带状几何上的KMBH模型的Bogoliubov激发谱，这里一共有$64$晶胞（每个包含$64$个各点），用的zigzag边界，
 	左边对应$\lambda=0.3$，右边对应$\lambda=1.3$。
 	红/蓝点代表边界态，
 	它们的波函数有大于$80\%$权重在最左/右的晶胞。
 	显然这里已经没有玻色型的Kramers对。
 	其他参数：$nU/t=1$，$\lambda_s/t=0.06$和$\lambda_v/t=0.1$。}
+	\label{KMBHwithoutPTRS}
 \end{figure}
 我们展示了对于$0<\lambda<1$和$\lambda>1$，这里没有玻色型的Kramers对。
 总而言之，种间相互作用将会破坏赝时间反演对称性。
@@ -504,7 +507,8 @@ GP能量泛函变成\footnote{注意GP能量泛函是独立于所有相位因子
 对于$0\leq\lambda<1$，通过令$\rho_1=\rho_3=(1/\sqrt{2})\cos\frac{\bar\theta}{2}$和$\rho_2=\rho_4=(1/\sqrt{2})\sin\frac{\bar\theta}{2}$，其中$\bar\theta$在图\ref{BHZBHtheta}%
 \begin{figure}
 	\includegraphics[width=.95\textwidth]{FIGthetabar1.pdf}
-	\caption{\label{BHZBHtheta}对于BHZBH模型的平均场解$\theta=2\arctan(\rho_2/\rho_1)$，作为$nU$和$m_z$的函数，这里$\lambda=0.3$。注意当在弱耦合区间，即$U/t$很小，我们总有$\bar\theta=0$。}
+	\caption{对于BHZBH模型的平均场解$\theta=2\arctan(\rho_2/\rho_1)$，作为$nU$和$m_z$的函数，这里$\lambda=0.3$。注意当在弱耦合区间，即$U/t$很小，我们总有$\bar\theta=0$。}
+	\label{BHZBHtheta}
 \end{figure}
 给出，式\eqref{egpBHZBH}可以被最小化。
 注意对于弱耦合极限，即$U/t$很小，
@@ -560,7 +564,8 @@ $A,B$如下
 图\ref{BHZBHwithoutPTRS}%
 \begin{figure}
 	\includegraphics[width=.95\textwidth]{FIGbbhzwithoutPTRS.pdf}
-	\caption{\label{BHZBHwithoutPTRS}对于$\lambda=0.3$（左）和$\lambda=1.3$（右），BHZBH模型在一个带状几何上的Bogoliubov激发谱。这里我们考虑有$64$个晶胞。其中红/蓝点表示边界态，对应于波函数有大于$80\%$的比例在最左/右边的晶胞。注意对于左图，两种边界态由于空间反演对称性完全重合了。可以看见，这里没有玻色型的Kramers对。其他参数：$nU/t=t_s/t=1$和$m_z/t=2.1$。}
+	\caption{对于$\lambda=0.3$（左）和$\lambda=1.3$（右），BHZBH模型在一个带状几何上的Bogoliubov激发谱。这里我们考虑有$64$个晶胞。其中红/蓝点表示边界态，对应于波函数有大于$80\%$的比例在最左/右边的晶胞。注意对于左图，两种边界态由于空间反演对称性完全重合了。可以看见，这里没有玻色型的Kramers对。其他参数：$nU/t=t_s/t=1$和$m_z/t=2.1$。}
+	\label{BHZBHwithoutPTRS}
 \end{figure}
 展示了，对于$0<\lambda<1$和$\lambda>1$，玻色型Kramers对是不存在的。
 总而言之，这里种间相互作用同意会破坏赝时间反演对称性。

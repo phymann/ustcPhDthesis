@@ -1,6 +1,7 @@
 % !TeX root = ../main.tex
 
 \chapter{一般二次型哈密顿量的求解}\label{ch2}
+本文研究的是玻色超流体激发谱能带的拓扑性质，其涉及的玻色型Bogoliubov变换与费米型的不同，因此绪论中\ref{sec:tbt}节介绍的传统（自由费米子）拓扑能带理论不能直接适用。在这一章中我们首先讨论一般Bogoliubov变换的定义和性质（包括玻色型和费米型），然后介绍如何求解一个一般的二次型哈密顿量\cite{Blaizot1986}。最后我们提供一个数值算法，其中特别强调了如何处理存在能级简并的情况。在附录\ref{bbdgdiscussion}中我们还额外讨论了玻色型BdG方程本征问题的特有性质。
 
 \section{Bogoliubov变换}
 
@@ -280,7 +281,7 @@ a^\dagger_{-\vb k}
 \end{equation}
 
 \section{数值算法}
-最后我们给出一个数值算法求变换矩阵$T$。注意对于给定$\vb k$，$T_{\vb k}$的求解和$T$是一样的，所以以下我们只讨论前者。第一步是直接求$H^\eff$的本征值问题，这一步是直接的，比如在Mathematica中可直接调用内置函数Eigensystem完成。假设这步已经完成，我们得到正交归一的本征向量组，
+最后我们给出一个数值算法求变换矩阵$T$ \cite{Maestro2004}。注意对于给定$\vb k$，$T_{\vb k}$的求解和$T$是一样的，所以以下我们只讨论前者。第一步是直接求$H^\eff$的本征值问题，这一步是直接的，比如在Mathematica中可直接调用内置函数Eigensystem完成。假设这步已经完成，我们得到正交归一的本征向量组，
 \begin{equation}
   T^{-\dagger} T^{-1} = I_{2N}.
 \end{equation}

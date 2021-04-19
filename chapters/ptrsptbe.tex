@@ -1,27 +1,24 @@
 % !TeX root = ../main.tex
 
-\chapter{光晶格中玻色爱因斯坦凝聚体的赝时间反演对称性保护的拓扑Bogoliubov激发}
+\chapter{玻色超流体中赝时间反演对称性保护的拓扑Bogoliubov激发模}
 
 \section{研究背景}
-拓扑能带理论 \cite{Qi2011,Hasan2010,Chiu2016} 最早被发展出来是去表征固体材料中电子能带的非平凡拓扑的。 这个领域早期一个里程碑式的工作是拓扑绝缘体和拓扑超导体的根据以下三种内禀对称性的十重分类：时间反演对称性、粒子-空穴对称性和手性对称性 \cite{Altland1997,Zirnbauer2018}。 在那之后人们很快又发现当有额外的空间对称性时，体拓扑数有简化的表达式 \cite{Fu2007}，甚至拓扑分类自身都被扩展了 \cite{Fu2011}。最近一些动力学的 \cite{Chang2018,Yang2018,Gong2018,Qiu2018}、开放量子系统的 \cite{Shen2018,Kawabata2018,Yao2018,Kawabata2019} 拓扑性质也开始被广泛研究。
-
-自从F. D. M. Haldane指出拓扑能带理论不是与费米子绑定的，其本质上是一种波的性质 \cite{Raghu2008}, 很多关注其他物理体系类似拓扑性质的工作开始涌现：例如磁性晶体 \cite{Shindou2013,Chisnell2015,Kondo2019}, 光子晶体 \cite{Wang2008,Rechtsman2013,Peano2016}, 声子晶体 \cite{Fleury2014,SafaviNaeini2014,Peano2015} 甚至是经典力学里耦合的单摆组成的系统 \cite{Suesstrunk2015}。
-这里我们关注光晶格中弱相互作用超冷原子集体激发的拓扑。事实上我们已经知道玻色爱因斯坦凝聚体激发模的波函数存在拓扑结构 \cite{Furukawa2015,Xu2016,Liberto2016}。
+在绪论中\ref{sec:tbt}节中我们已经详细讨论了传统（自由费米子）拓扑能带理论。特别地，我们已经知道针对拓扑绝缘体和拓扑超导体的三种内禀对称性（时间反演对称性、粒子-空穴对称性和手性对称性），有所谓的十重分类，见\ref{tenfoldway}小节。这里我们关注光晶格中弱相互作用超冷玻色子集体激发对应能带的拓扑。事实上我们已经知道这些激发谱的能带存在拓扑结构 \cite{Furukawa2015,Xu2016,Liberto2016}。
 但是所有之前的工作都是关注的时间反演对称性被破坏的系统，
 这些体系在二维有非零的陈数，
-并且其与边界的手性模有一对一的关系，
-这就是所谓的体边对应关系。
-注意到这种激发普的能带拓扑类似于属于A类的陈绝缘体。
+并且其与边界的手性模个数有一一关系，
+这就是所谓的体边对应关系（见\ref{subsec:tebbc}小节）。
+根据十重分类定义，这种激发谱的能带拓扑对应于A类的陈绝缘体。
 
-归功于Kane和Mele，我们现在知道在二维和三维存在一种被奇的时间反演对称性保护的拓扑态，即属于AII类的拓扑绝缘体。这种拓扑态有一对螺旋形的边界态，在同一边界沿着相反的方向前进；其存在与否是被一个体态的$\mathbb Z_2$拓扑数描述的。这个$\mathbb Z_2$拓扑数有很多等价的定义：比如用Pfaffian \cite{Kane2005}、用时间反演极化 \cite{Fu2006} 和用Wannier中心的流动 \cite{Yu2011} 来定义。注意最后一种定义是实践中最好用的，因为它不涉及需要固定规范的问题（这个问题前两个定义会涉及）。
-一个自然的问题是，类似的拓扑结构是否在玻色超流体中存在呢？
+归功于Kane和Mele，我们现在知道在二维存在一种被奇的时间反演对称性保护的拓扑态，即属于AII类的拓扑绝缘体。这种拓扑态有一对螺旋形的边界态，在同一边界沿着相反的方向传播；其存在与否是被一个体态的$\mathbb Z_2$拓扑数描述的。这个$\mathbb Z_2$拓扑数有很多等价的定义：比如用Pfaffian \cite{Kane2005}、时间反演极化 \cite{Fu2006} 和Wannier中心的流动 \cite{Yu2011} 来定义。注意最后一种定义是实践中最好用的，因为它不涉及需要固定规范的问题（见式\eqref{gaugeconstraint1}）。
+一个自然的问题是，类似的拓扑结构是否在玻色超流体的低能激发谱能带中存在呢？
 如果是，
-怎么定义关联的体拓扑数？
+怎么定义对应的体拓扑数？
 体边对应关系是否仍然成立？
 
-在这个工作中，我们展示一个AII类的拓扑结构确实在光晶格中的玻色爱因斯坦凝聚体中的Bogoliubov激发中存在，并且它是被一个赝时间反演对称性保护的，
+以下我们展示AII类的拓扑结构确实在光晶格中玻色爱因斯坦凝聚体的Bogoliubov激发谱能带中存在，并且它是被一个赝时间反演对称性保护的，
 后者是赝反幺正的，
-并且其平方等于负一。
+并且其平方等于$-1$。
 我们证明对应的体拓扑数也是一个$\mathbb Z_2$数，
 并且之前提到的费米子情况的三个定义都可以在这里找到对应。
 
@@ -52,15 +49,15 @@
 $\Pi^2=\Pi=\Pi^\sharp$，
 这暗示了$\Pi$和$\Pi^\dagger$是通过一个相似变换联系的。
 
-和厄米性不同，赝厄米性并不总是暗示实普。但是所谓的Krein-spectral算符，它被定义为满足
+和厄米性不同，赝厄米性并不总是暗示实谱。但是所谓的Krein-spectral算符，它被定义为满足
 \begin{equation}
 	\tilde H=UHU\inv =UHU^\sharp=\tilde H^\sharp =\tilde H^\dagger,\nonumber
 \end{equation}
-总是有实普。那些关于赝内积非负的算符自动是Krein-spectral算符\cite{Peano2018,Colpa1978}.
+其显然是有实普。特别地，那些关于赝内积非负的算符自动是Krein-spectral算符\cite{Peano2018,Colpa1978}.
 
-对应一个玻色型BdG系统，我们有实的$(1,-1)$类Krein空间 \cite{SchulzBaldes2016}，这里$J=\Sigma_3$，
+对于一个玻色型BdG系统，我们有实的$(1,-1)$类Krein空间 \cite{SchulzBaldes2016}，这里$J=\Sigma_3$，
 $Q=\Sigma_1$。
-有效哈密顿量式\eqref{hkbdg}是都有实对称的赝厄米矩阵。
+有效哈密顿量式\eqref{hkbdg}是带有实对称的赝厄米矩阵。
 Bogoliubov变换矩阵$T_{\boldsymbol k}$式\eqref{deftk}是一个带有实对称的赝幺正矩阵.
 
 式\eqref{tkpu}可以被重写为一个赝内积的形式，
@@ -78,7 +75,7 @@ Bogoliubov变换矩阵$T_{\boldsymbol k}$式\eqref{deftk}是一个带有实对�
 \end{equation}
 从这开始，除非单独声明，我们将只关注粒子空间，因为由于粒子-空穴对称性，空穴激发只是前者的复制。为了避免杂乱，我们也省略表示粒子空间的上指标``+".
 
-最后我们简单提一下怎么在拓扑能带理论中处理Nambu-Goldstone（NG）模。
+最后我们简单解释下如何在拓扑能带理论中处理Nambu-Goldstone（NG）模。
 NG模是一种由于系统连续对称性破缺导致的无能隙模，
 它们一般不满足式\eqref{orthogonal conditions}给出的关系\cite{Takahashi2015,Watanabe2020}。
 但是我们总可以通过加一个无穷小外场显式地破坏对应的对称性来去除这些NG模。
@@ -326,7 +323,7 @@ Wannier中心就是$w_{n,j}$的相位，
 这个定义和之前所有定义的等价性，可类似于文献\cite{Yu2011}的附录那样得到。
 
 
-\subsection{来自额外空间反演对称性的简化}
+\subsection{来自额外的空间反演对称性的简化}
 最后我们指出如果有一个额外的空间反演对称性，
 那么这个$\mathbb Z_2$不变量式\eqref{z2dl}有一个简化的表达式，
 \begin{equation}\label{isz2}
@@ -420,13 +417,14 @@ $\ket{\psi_\lambda(\boldsymbol{\Lambda} _i)}$也是$\mathcal P$的本征态，
 上式中第一项描述最近邻跃迁；第二项描述次紧邻带相位的跃迁，并且对于两种赝自选，有相反的相位，
 见图\ref{KMBHlattice}。%
 \begin{figure}
-	\includegraphics[width=.95\textwidth]{FIGbkmlattice.pdf}
-	\caption{\label{KMBHlattice}
-	KMBH模型在六角晶格上。
+    \centering
+	\includegraphics[width=.8\textwidth]{FIGbkmlattice.pdf}
+	\caption{KMBH模型在六角晶格上。
 	两种子晶格被记为$A$（红）和$B$（蓝），其中一个晶胞被用灰色长方形框出。
 	两个黑色向量$\vb a_1$和$\vb a_2$表示Bravais晶格向量。
 	次近邻跃迁被用红色和蓝色标出，对于不同赝自旋，这里有一个负号差别。
 	这由Pauli矩阵$s_3$暗示，其作用于赝自旋空间。}
+	\label{KMBHlattice}
 \end{figure}
 这里$s_i$（$s_0$），$i=1,2,3$，是作用在赝自旋空间的Pauli（$2\times 2$单位矩阵）矩阵。
 $v_{ij}=\sgn(\vb d_i\times \vb d_j)_z=\pm 1$其中$\vb d_i$和$\vb d_j$是沿着构成次近邻的两个键的向量，
@@ -442,11 +440,13 @@ $v_{ij}=\sgn(\vb d_i\times \vb d_j)_z=\pm 1$其中$\vb d_i$和$\vb d_j$是沿着
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
+    \centering
 	\includegraphics[width=.95\textwidth]{FIGbkmbe.pdf}
-	\caption{\label{KMBHbe}周期性边界条件下，沿着布里渊区高对称性线（见左图里的嵌入图）的Bogoliubov激发谱，在（左）$\lambda_v/t=0.10$，（中）$\lambda_v/t=\lambda_v^\star/t \approx 0.36$和（右）$\lambda_v/t=0.70$时。无相互作用的能带用灰线标出（向上平移了$nU/2-\mu$）。
+	\caption{周期性边界条件下，沿着布里渊区高对称性线（见左图里的嵌入图）的Bogoliubov激发谱，在（左）$\lambda_v/t=0.10$，（中）$\lambda_v/t=\lambda_v^\star/t \approx 0.36$和（右）$\lambda_v/t=0.70$时。无相互作用的能带用灰线标出（向上平移了$nU/2-\mu$）。
 	注意当Bogoliubov激发谱的能隙关闭时，
 	无相互作用的能隙已经关闭又重新打开了，如中图里的嵌入图所示。
 	其他一些参数：$nU/t=1$和$\lambda _s/t=0.06$。}
+	\label{KMBHbe}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -479,10 +479,9 @@ $\tilde{\mathcal T} \Gamma_{ab} \tilde{\mathcal T}\inv =-\Gamma_{ab}$，
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htb]
-    \centering\small
-	\caption{\label{paramtab}用于式\eqref{KMBHh0k}的参数在前两行给出，
-	额外的用于式\eqref{KMBHheff}的参数在后两行给出，其中$x=\sqrt{3} k_x a/2$和$y=3 k_y a/2$。
-	注意$\bar \theta$是一个关于$\lambda_v/t$和$Un/t$的函数，见图\ref{KMBHtheta}。}
+    \centering
+	\caption{用于式\eqref{KMBHh0k}的参数在前两行给出，额外的用于式\eqref{KMBHheff}的参数在后两行给出，其中$x=\sqrt{3} k_x a/2$和$y=3 k_y a/2$。注意$\bar \theta$是一个关于$\lambda_v/t$和$Un/t$的函数，见图\ref{KMBHtheta}。}
+   \label{paramtab}
 	\begin{tabular}{cc|cc}
 	\hline
 		$d_1$ & $-t(1+2\cos x\cos y)$ & $d_2$ & $-\lambda_v$ \\
@@ -499,14 +498,15 @@ $\tilde{\mathcal T} \Gamma_{ab} \tilde{\mathcal T}\inv =-\Gamma_{ab}$，
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure}[th!]
 \centering
 	\includegraphics[width=.85\textwidth]{FIGbkmtpd.pdf}
-	\caption{\label{KMBHtpd} \textbf{(a)} 利用式\eqref{fukui}和文献\cite{Fukui2007}给出的数值方法计算的$\mathbb Z_2$不变量，对于最上面的两个能带，在$nU/t=1$和$\lambda_s/t=0.06$时。由蓝点线标出的边界是通过一个完全数值的计算得到的（具体见式\eqref{lv}上面的解释）。红实线是通过一个级数展开得到的，见式\eqref{lv}。
+	\caption{\textbf{(a)} 利用式\eqref{fukui}和文献\cite{Fukui2007}给出的数值方法计算的$\mathbb Z_2$不变量，对于最上面的两个能带，在$nU/t=1$和$\lambda_s/t=0.06$时。由蓝点线标出的边界是通过一个完全数值的计算得到的（具体见式\eqref{lv}上面的解释）。红实线是通过一个级数展开得到的，见式\eqref{lv}。
 	对比黑色的虚线（对应于无相互作用时的情况），我们发现$\mathbb Z_2$拓扑区域变大了。
 	\textbf{(b,c)} Bogoliubov激发谱在一个带状集合上。这里有$64$晶胞，每个包含$64$格点。这里我们使用zigzag边界。
 	对于\textbf{(b)}，$\lambda_v/t=0.1$；对于\textbf{(c)}，$\lambda_z/t=0.7$。
 	红（蓝）点对应于边界态，其波函数有大于$80\%$比例在最左（右）的晶胞。注意由于赝时间反演对称性导致的玻色型的Kramers确实存在。\textbf{(d)} and \textbf{(e)} 是最上面两个能带的Wannier中心流动，这里我们把$k_2$当作时间，它们对应于奇的和偶的缠绕数。注意到这里的流动行为是关于$k_2=0$镜面对称的，并且流动是在$k_2=0$和$k_2=\pi$汇合的。这些都和我们在附录给出的证明一致。}
+	\label{KMBHtpd}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -598,11 +598,10 @@ Bernevig-Hughes-Zhang模型是陈绝缘体的时间反演对称的推广，而�
 我们考虑有两种玻色子（用$\eta=A,B$标记），每种又带有一个赝自旋1/2（用$s=\uparrow,\downarrow$标记）。
 系统被定义在二维正方晶格，
 其无相互作用紧束缚哈密顿量是（见图\ref{bbhzlattice}%
-\begin{figure}
+\begin{figure}[th!]
 \centering
-	\includegraphics[width=.95\textwidth]{FIGbbhzlattice.pdf}
-	\caption{\label{bbhzlattice}
-	在正方晶格上的BHZBH模型。
+	\includegraphics[width=.55\textwidth]{FIGbbhzlattice.pdf}
+	\caption{在正方晶格上的BHZBH模型。
 	这是刘雄军等人的实验方案的直接推广\cite{Liu2014}。
 	式\eqref{bhzorigin}中的，沿x（y）方向的赝自旋翻转的跃迁矩阵$h_s^{ij}$备用蓝色（红色）标出。
 	其中箭头表示跃迁方向，
@@ -610,6 +609,7 @@ Bernevig-Hughes-Zhang模型是陈绝缘体的时间反演对称的推广，而�
 	在经过一个规范变换$a_{j\eta\downarrow}\rightarrow (-1)^{j}a_{j\eta\downarrow}$ \cite{Liu2014}后，
 	所有的线都变成实线，
 	然后我们可以用红线标出的$\vb a_{1,2}$作为Bravais格点向量，对应的晶胞只包含一个格点。}
+	\label{bbhzlattice}
 \end{figure}
 ），
 \begin{equation}\label{bhzorigin}
@@ -680,19 +680,19 @@ $\eta_i$ ($\eta_0$)和$s_i$ ($s_0$), $i=1,2,3$, 是Pauli矩阵（$2\times 2$单�
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htb]
-    \centering\small
-	\caption{\label{paramtabBHZ}前两行展示了被用在式\eqref{hkbhz1}的系数；
-	额外的用在式\eqref{bbhzheff}中的系数被展示在后两行。}
+    \centering
+	\caption{前两行展示了被用在式\eqref{hkbhz1}的系数；额外的用在式\eqref{bbhzheff}中的系数被展示在后两行。}
+   \label{paramtabBHZ}
 	\begin{tabular}{cc|cc}
-	\hline
+	\toprule
 		$d_1$ & $-2t(\cos k_x +\cos k_y)-m_z$ & $d_{2}$ & $-2t_s\sin k_x$ \\
 		\hline
 		$d_{5}$ & $-2t_s \sin k_y$ & \\
-		\hline
+		\midrule
 		$\tilde d_1$ & $\frac{nU}{2}+d_1$ & $d_0$ & $\frac{nU}{4}$ \\
 		\hline
 		$\tilde d_0$ & $4t+m_z$ &  & \\
-		\hline
+		\bottomrule
 	\end{tabular}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -720,10 +720,13 @@ $\eta_i$ ($\eta_0$)和$s_i$ ($s_0$), $i=1,2,3$, 是Pauli矩阵（$2\times 2$单�
 	\mathcal P=\tau_0\otimes\tilde{\mathcal P}.\label{ISop}
 \end{equation}
 通过对角式\eqref{bbhzheff}，我们可以得到Bogoliubov激发谱，如图\ref{bbhzbe}%
-\begin{figure*}
+\begin{figure*}[th!]
 \centering
 	\includegraphics[width=.95\textwidth]{FIGbbhzbe.pdf}
-	\caption{\label{bbhzbe} Bogoliubov excitation spectrum (blue dots) under full periodic boundary conditions along high symmetric lines in the 1BZ [shown in the inset of left figure], for (left) $m_z/t=2.10$, (middle) $m_z/t=m_z^\star/t\approx 4.48$ and (right) $m_z/t=5.10$. The noninteracting bands (shifted upwards by $nU/2-\mu$) are also plotted in gray lines. Note when the gap of Bogoliubov excitation spectrum just closes, the gap corresponding to the noninteracting band has already reopened as shown in inset of the middle figure. Other relevant parameters: $nU/t=t_s/t=1$.}
+	\caption{在周期边界条件下，沿着第一布里渊区高对称点（见右图的嵌入图）的Bogoliubov激发谱（蓝点）。左$m_z/t=2.10$，中$m_z/t=m_z^\star/t\approx 4.48$，右$m_z/t=5.10$。
+	无相互作用能带（往上移了$nU/2-\mu$） 被用灰色实线标出。
+	注意到当Bogoliubov能带能隙关闭时，对应的无相互作用能带已经关闭又重打开了（见中图）。其他相关参数：$nU/t=t_s/t=1$.}
+	\label{bbhzbe}
 \end{figure*}
 所示。这里有一个两重简并，是由于$\mathcal P\mathcal T$对称性。
 在低能极限下，
@@ -746,10 +749,11 @@ $\eta_i$ ($\eta_0$)和$s_i$ ($s_0$), $i=1,2,3$, 是Pauli矩阵（$2\times 2$单�
 而当$m_z>m_z^\star$时，$\tilde \Delta_2=0$，
 即对应于$\mathbb Z_2$平凡的区域。
 我们也计算了最上面一对能带的Wannier中心流动，以及在一个带状几何上的Bogoliubov激发谱，见图\ref{bbhztpd}。%
-\begin{figure}
+\begin{figure}[th!]
 \centering
 	\includegraphics[width=.95\textwidth]{FIGbbhztpd.pdf}
-	\caption{\label{bbhztpd} Bogoliubov excitation spectrum of particle bands in a strip geometry of $64$ unit cells (each containing $64$ sites) for $m_z/t=2.1$ (left) and $m_z/t=5.1$ (right). Green points correspond to edge modes, whose wavefunctions have more than $80\%$ weight on the rightmost unit cell. Edge modes on the leftmost unit cell completely overlaps with the green points due to IS. The inset is the corresponding Wannier center flow of the second pair of particle bands by treating $k_2$ as the time, which shows an odd and even number of winding. Note the flow behavior is symmetric w.r.t. the $k_2=0$ plane, and the Wannier center pair meet at $k_2=0$ and $k_2=\pi$. Also note the Wannier center flow is symmetric w.r.t. the mirror plane $\theta=0$ due to IS. Other relevant parameters: $nU/t=t_s/t=1$.}
+	\caption{上两图：在带状几何下的Bogoliubov激发谱，这里每个晶胞包含了64个格点。左：$m_z/t=2.1$，右：$m_z/t=5.1$。绿点对应与边界态，它的波函数有大于$80\%$的比例在最右边。在左边的边界态由于空间反演对称性，和绿点完全重合。下两图：对应于上图的，上面一对能带的Wannier中心流动，其中我们把$k_2$看作时间，它们分别有奇数和偶数的缠绕。注意这个流动行为是关于$k_2=0$面对称的，并且它们在$k_2=0$和$k_2=\pi$汇合。额外地，由于空间反演对称性，Wannier中心流动也是关于$\theta=0$面对称的。其他参数：$nU/t=t_s/t=1$。}
+	\label{bbhztpd}
 \end{figure}
 这些结果验证了两种定义$\mathbb Z_2$不变量方式的等价性，以及体-边对应的正确性。
 
@@ -773,23 +777,17 @@ $\eta_i$ ($\eta_0$)和$s_i$ ($s_0$), $i=1,2,3$, 是Pauli矩阵（$2\times 2$单�
 最后我们注意到$\mathbb Z_2$拓扑的区域在BHZBH模型中也随着相互作用（或者粒子数密度）的增加变大了，如式\eqref{lzc}所示。
 和KMBH模型类似，物理地说，这个排斥性的相互作用更喜欢一个均匀的构型，所以会压制$m_z$导致的赝自旋失衡。所以为了达到一个赝自旋失衡的临界值，我们需要一个更大的$m_z$，也即$\mathbb Z_2$拓扑的区域变大。
 
-\section{总结和讨论}\label{sec5}
-在这一节中，我们研究了在光晶格中的BEC的被赝时间反演保护的拓扑Bogoliubov激发，它的拓扑性质类似于属于AII类的拓扑绝缘体。
+\section{小结和讨论}\label{sec5}
+在这一节中，我们研究了光晶格中BEC的被赝时间反演保护的拓扑Bogoliubov激发，它的拓扑性质类似于属于AII类的拓扑绝缘体。
 这里的体拓扑不变量被证明也是一个$\mathbb Z_2$数，可以用Pfaffian，赝时间反演极化，和Wannier中心流动来表征。最后一种方案是最有用的，因为它是规范不变的。
 如果加上一个额外的空间反演对称性，这个$\mathbb Z_2$不变量可以通过考察空间反演算符在“占据态”的赝时间反演不变动量处的本征值来确定。
-接着我们讨论了两个简单的、可在冷原子中实验实现的模型。并且数值地确认了体-边对应。对于这两个模型，我们都发现拓扑区域随着相互作用（或者粒子数密度）的增加而变大，这是由于排斥相互作用更喜欢一个均匀的构型，所以压制了$\lambda_v$ ($m_z$)诱导的子晶格（赝自旋）失衡效果，而后者直接导致了拓扑转变。有效地，我们说这个拓扑变得更加具有鲁棒性。
+接着我们讨论了两个简单的、可在冷原子中实验实现的模型。并且数值地确认了体-边对应。对于这两个模型，我们都发现拓扑区域随着相互作用（或者粒子数密度）的增加而变大，这是由于排斥相互作用更喜欢一个均匀的构型，所以压制了$\lambda_v$ ($m_z$)诱导的子晶格（赝自旋）失衡效果，而后者直接导致了拓扑转变。有效地，我们说这个拓扑结构在有相互作用时变得更加具有鲁棒性。
 
-正如文献\cite{ShunQingShen}针对费米子讨论的情况，我们期待这里讨论的拓扑性质也是在弱的无序下鲁棒的，这里的无序应该满足如下两个条件：（1）它必须没有破坏赝时间反演对称性；（2）它足够弱，以至于Bogoliubov激发谱里的能隙没有闭合，并且系统也没有进入其他相，例如玻色玻璃相（在这个相激发谱的拓扑结构可能有很大的变化）。当然，这个问题需要一个更细致的未来的工作来讨论。
+正如文献\cite{ShunQingShen}针对费米子讨论的情况，我们期待这里讨论的拓扑性质也是在弱的无序下鲁棒的，这里的无序应该满足如下两个条件：（1）它必须没有破坏赝时间反演对称性；（2）它足够弱，以至于Bogoliubov激发谱里的能隙没有闭合，并且系统也没有进入其他相，例如玻色玻璃相（在这个相激发谱的拓扑结构可能有很大的变化）。当然，这个问题需要一个更细致的未来的工作来讨论，我们注意到最近已有相关工作出现\cite{Akagi2020}。
 
 体边对应保证了一个非平凡的$\mathbb Z_2$不变量暗示了拓扑边界态的存在，而后者是可以直接通过实验测量的 \cite{Goldman2012,Goldman2013,Goldman2013a,Celi2015}。
 这里我们预期拓扑的螺旋边界态同样能被探测到。例如，我们可以通过Raman转变相干地把一小部分凝聚体转移到边界态 \cite{Ernst2009}，
 然后由于它与背景凝聚体发生干涉，一个沿着边界的密度波会出现 \cite{Furukawa2015}。
-
-该工作的一个直接推广是考察在三维BEC中类似于AII类的Bogoliubov激发谱拓扑\cite{Fu2007a,Kondo2019a}。
-利用Krein空间理论，我们也可以研究在弱相互作用下光晶格中BEC的各种(点式或者非点式）晶体对称保护的Bogoliubov激发谱能带拓扑，这同样类似于费米子情况\cite{Ando2015}。
-我们还可以去研究Mott绝缘相下的拓扑结构。\cite{Vasic2015,Wu2017}.
-
-最后，我们必须指出，虽然对于弱相互作用的玻色子，Bogoliubov理论的有效性总所周知。利用数值方法，或者多体微扰论去探索更高阶的近似，考虑量子修正，并且研究赝时间反演对称性和其相关的拓扑是否仍然存在，也是一个有趣的课题。
 
 
 
