@@ -5,18 +5,16 @@
 
 \section{背景介绍}
 
-在上一章，我们讨论了弱相互作用玻色超流体Bogoliubov谱中对称性保护的拓扑能带。从直观来说，其能带拓扑的存在性是容易理解的：弱相互作用极限下的Bogoliubov激发谱在高能区域和无相互作用能带几乎没有区别，所以在高能处带隙间的拓扑边界态不会消失。尽管如此，上章的重点是考察有赝时间反演对称性保护的能带拓扑，这一点并不显然：事实上正如我们在附录\ref{mfs}里展示的那样，当相互作用形式改变时，即使总哈密顿量存在通常意义上的时间反演对称性，有效哈密顿量的赝时间反演对称性也可能消失。另外需要注意，由于伽利略不变性，低能极限下的相位扰动和振幅扰动是共轭变量，这对共轭变量只会给出一支Goldstone模。
+在上一章，我们讨论了弱相互作用玻色超流体Bogoliubov谱中对称性保护的拓扑能带。从直观来说，其能带拓扑的存在性是容易理解的：弱相互作用极限下的Bogoliubov激发谱在高能区域和无相互作用能带几乎没有区别，所以在高能处带隙间的拓扑边界态不会消失。尽管如此，上章的重点是考察有赝时间反演对称性保护的能带拓扑，这一点并不显然：事实上正如我们在附录\ref{mfs}里展示的那样，当相互作用形式改变时，即使总哈密顿量存在通常意义上的时间反演对称性，有效哈密顿量的赝时间反演对称性也可能消失。另外需要注意，由于伽利略不变性，低能极限下的相位扰动和振幅扰动是共轭变量，这对共轭变量只会给出一支Goldstone模，或被称作Bogoliubov模。
 
-我们知道，一个连续对称性的自发对称破缺会导致两类序参量的集体振荡模式：无质量的Goldstone模式和有质量的Higgs模式。在粒子物理里，所谓的Higgs玻色子\cite{Higgs1964}是被一个规范的玻色凝聚体模拟的；通过Higgs机制，它产生了各种基本粒子的质量。在凝聚态物理中类似的例子更丰富：例如电荷密度波\cite{Yusupov2010}, 超导体 \cite{Tsuchiya2018}, 量子磁体 \cite{Su2020}, 光晶格中的冷原子凝聚体\cite{Liu2015}等等。在这些体系中，Higgs模是一种集体的复序参量或者向量场振幅的波动。
+我们知道，一个连续对称性的自发对称破缺会导致两类序参量的集体振荡模式：无质量的Goldstone模式和有质量的Higgs模式。在粒子物理里，所谓的Higgs玻色子\cite{Higgs1964}是被一个规范的玻色凝聚体模拟的；通过Anderson-Higgs机制\cite{Anderson1963}，它产生了各种基本粒子的质量。2012年，Higgs玻色子终于在LHC的实验中被发现\cite{Aad2012,Chatrchyan2012}，填补了标准模型最后一块拼图。Higgs玻色子作为一种集体激发的模式，在凝聚态物理中更是普遍存在，例如在电荷密度波\cite{Yusupov2010}, 超导体 \cite{Tsuchiya2018}, 量子磁体 \cite{Su2020}, 光晶格中冷原子凝聚体\cite{Endres2012,Pollet2012,Liu2015}等等。严格来说，只有超导体中的情况是和粒子物理里类似的：即规范场耦合到凝聚体，由于自发对称性破缺和Anderson-Higgs机制而获得质量（Meissner效应）。但更广泛的一个看法是，把Higgs模作为一种集体的复序参量或者向量场振幅的振动。
 
-关于以上两个基本概念，一个很有意思问题是：在强相互作用的量子相变点附近有涌现的拓扑Higgs模？或者反过来问，低能的拓扑激发模在量子相变点附近能不能变成完全的Higgs模式？
-这章中，通过研究一个简单的、在冷原子体系中容易实现的模型，我们将对这个问题给出肯定回答。
-
+对于上述两个基本概念（拓扑激发谱和Higgs振幅模），一个有趣的问题是，光晶格中整数填充下的强相互作用超流体，在靠近量子相变至Mott绝缘相附近时，是否可能出现涌现的拓扑Higgs模？通过研究一个简单的、在冷原子体系中容易实现的模型，即$d$维Su-Schrieffer-Heeger-Bose-Hubbard (SSHBH)模型，我们将通过三个方面对此给出肯定回答。首先在大整数填充极限下，我们发现了完整的Higgs振幅能带，其拓扑直接继承于单粒子能带，并数值验证了体边对应关系；然后在实验允许的有限整数填充下，我们发现能带拓扑没有改变，同时Higgs振幅主导的拓扑边界态已经涌现；最后我们通过一个Ginzberg-Landau分析统一、互补地解释了以上结果。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{在$p=\infty$极限下的赝自旋-1模型}
 
-作为一个有拓扑Higgs模的可靠模型，我们这里考虑$d$维（具体数值计算时将会令$d=2$，但所有解析表达式都是在一般地$d$维给出的）的Su-Schrieffer-Heeger-Bose-Hubbard (SSHBH)模型，它的哈密顿量是
+作为一个有拓扑Higgs模的可靠模型，我们考虑$d$维（具体数值计算时将会令$d=2$，但所有解析表达式都是在一般地$d$维给出的）的SSHBH模型，其哈密顿量是
 \begin{equation}
   \hat{H} = \sum_{i   j} a_i^{ \dagger} t_{i   j} a_j - \mu \sum_i
   a_i^{ \dagger} a_i + \frac{1}{2}U \sum_i a^{ \dagger}_i a_i^{ \dagger} a_i a_i, \label{h}
@@ -34,7 +32,7 @@
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 这个模型哈密顿量可以在实验上很容易实现，例如在二维时，通过把无自旋的玻色子装在一个正方形光晶格，
-并且额外再加一个两倍周期的超光晶格，如图\ref{lattice}式。
+并且额外再加一个两倍周期的超光晶格，如图\ref{lattice}示。
 在$t_1 / t_2$不是很远离1时，我们知道这个系统有一个由$t / U$调控的，
 在Mott绝缘态和超流态的量子相变，
 这里$t = (t_1 + t_2)/2$ \cite{Fisher1989}。
@@ -68,7 +66,7 @@ $\delta \mu = \mu - (p - 1 / 2)U \approx \mu - pU$是从第$p$个耳垂中间开
 原始的$\mathrm{U} (1)$对称性变成了沿$z$方向的$\mathrm{O} (2)$自旋选择对称性，
 原始的超流序参量变成$\psi_i = \langle a_i \rangle \approx \sqrt{p / 2} \langle \hat{S}_i^- \rangle$。
 
-利用一个Gutzwiller型的平均场基态ansatz$\left| \text{GS} \right\rangle = \bigotimes_i | \Phi_0 \rangle_i$，其中
+利用一个Gutzwiller型的平均场基态ansatz，$\left| \text{GS} \right\rangle = \bigotimes_i | \Phi_0 \rangle_i$，其中
 \begin{eqnarray}
       | \Phi_0 \rangle_i &=& \cos \frac{1}{2}\theta \ket{0}_i + e^{i (\eta-\phi) / 2} \sin \frac{1}{2}\theta \nonumber\\
       &&  \times \left( \cos \frac{1}{2}\chi \ket{+1}_i + e^{i \phi } \sin \frac{1}{2}\chi \ket{-1}_i   \right),\nonumber
@@ -187,12 +185,12 @@ $\sinh \beta_{i, \bm{k}} = - \sgn(m_{i, \bm{k}}) \sqrt{\frac{g_{\alpha} + m_{i, 
 由于两种模$\alpha = A$和$P$导致的这种振荡是
 \begin{subequations}\label{per}
     \begin{align}
-        \delta \bm{S}_i^{(A)} &= f^{(A)}_{\bm{k}, \lambda} \cos (E_{i, \alpha,
-  \bm{k}} t -\bm{k} \cdot \bm{r}) \hat{\bm{e}}_x,
+        \delta \bm{S}_i^{(A)} &= f^{(A)}_{\bm{k}, \lambda} \cos (E_{
+  \bm{k},\lambda} t -\bm{k} \cdot \bm{r}) \hat{\bm{e}}_x,
   \label{dsa}\\
-   \delta \bm{S}_i^{(P)} &= f^{(P)}_{ \bm{k}, \lambda} \sin (E_{k,
+   \delta \bm{S}_i^{(P)} &= f^{(P)}_{ \bm{k}, \lambda} \sin (E_{\bm{k},
   \lambda} t -\bm{k} \cdot \bm{r}_i) \hat{\bm{e}}_y \nonumber\\
- &\quad + f^{(P)\prime}_{\bm{k}, \lambda} \cos (E_{k, \lambda} t -\bm{k} \cdot
+ &\quad + \tilde f^{(P)}_{\bm{k}, \lambda} \cos (E_{\bm{k}, \lambda} t -\bm{k} \cdot
   \bm{r}_i) \hat{\bm{e}}_z, \label{dsp}
     \end{align}
 \end{subequations}
@@ -380,7 +378,7 @@ $I_{\bm{k}\lambda} = X_{\bm{k}\lambda} - Y_{\bm{k}\lambda} = 0$ ($R_{\bm{k}\lamb
 \section{来自Ginzberg-Landau分析的洞察}
 
 最后我们给出一个互补、简单、统一的图像来解释以上结果。
-注意到在一个整数填充$p\in \mathbb Z_{\geq 0}$，
+注意到在整数填充$p\in \mathbb Z_{\geq 0}$，
 靠近SF-MI相变点时，我们可以用一个强耦合RPA方法\cite{Sengupta2005}得到这个$d$维SSHBH模型的低能有效作用量，
 \begin{eqnarray}
       S_{\text{eff}} &=& \int \dif \tau \sum_{i  } \psi_i^{\ast} \left[
@@ -390,13 +388,13 @@ $I_{\bm{k}\lambda} = X_{\bm{k}\lambda} - Y_{\bm{k}\lambda} = 0$ ($R_{\bm{k}\lamb
   \frac{\tilde{U}}{2} \sum_i \psi_i^{\ast} \psi_i^{\ast} \psi_i \psi_i,\nonumber
 \end{eqnarray}
 其中$c_l = \frac{1}{l!} \frac{\partial^l G^{- 1}_{\text{loc}} (\iu
-\omega)}{\partial (\iu \omega)^l} |_{\iu \omega = 0}$，$l=0,1,\dots$，$G_{\text{loc}} (\iu \omega_n) = \frac{- p}{i\omega_n + \varepsilon_{p - 1} - \varepsilon_p} + \frac{p + 1}{i \omega_n +
+\omega)}{\partial (\iu \omega)^l} |_{\iu \omega = 0}$，$l=0,1,2,\dots$，$G_{\text{loc}} (\iu \omega_n) = \frac{- p}{i\omega_n + \varepsilon_{p - 1} - \varepsilon_p} + \frac{p + 1}{i \omega_n +
 \varepsilon_p - \varepsilon_{p + 1}}$是严格的零温局域传播子，
 $\varepsilon_p = - \mu p + (U / 2) p (p - 1)$是在局域极限下的本征能量。
-注意到上式中裸的相互作用强度$U$已经被换成了严格的局域两粒子顶点函数，在静态极限下。它是一个关于$p$, $\mu$和$U$的函数，但其一般形式跟我们以下讨论无关。
+注意到上式中裸的相互作用强度$U$已经被换成了在静态极限下严格的局域两粒子顶点函数。
+它是一个关于$p$, $\mu$和$U$的函数（详见\cite{Sengupta2005})，但其具体形式跟以下讨论无关。
 在超流相，利用一个格点无关的序参量$\psi_i = \psi_0 \in \mathbb{R}$，
-并且引入如式\eqref{op}那样的扰动，一个二次型扰动作用量可以被得到\footnote{
-注意跃迁项没有非对角元贡献跟无相互作用哈密顿量的具体形式相关。容易证明对于一个无自旋玻色子，如果凝聚体波函数是格点无关的，那么一个复数形式的跃迁系数总是导致相位和振幅模的耦合。}
+并且引入如式\eqref{op}那样的相位和振幅扰动，一个二次型扰动作用量可以被得到
 \begin{align}
   S^{(2)} &= \int \dif \tau \sum_{i   j} \left[\begin{array}{cc}
      \rho_i & \theta_i
@@ -412,22 +410,24 @@ $\varepsilon_p = - \mu p + (U / 2) p (p - 1)$是在局域极限下的本征能�
      \rho_j\\
      \theta_j
    \end{array}\right]. \label{hij}
-\end{align}    
-通过令$c_1 = 0$ (即，在Lorentz不变线上)，并且在低能极限下$\omega \rightarrow 0$，
+\end{align}
+注意上式中跃迁项没有非对角元贡献跟单粒子哈密顿量的具体形式相关。由于Higgs振幅模的出现需要系统有涌现的Lorentz不变性，对于光晶格中的玻色超流体，这就需要系统有粒子-空穴不变性。这里所谓的粒子-空穴不变性与玻色型BdG哈密顿量自带的粒子-空穴对称性不同，它是指由低能有效作用量得到的关于$\delta\psi$和$(\delta\psi)^*$的运动方程在线性阶有相同的形式，其自动暗示了关于$\delta\theta \propto \delta\psi - (\delta\psi)^*$和$\delta\rho \propto  \delta\psi + (\delta\psi)^*$的线性运动是解耦的。根据这个要求，当考虑无自旋玻色子时，其单粒子哈密顿量必须满足时间反演对称性，即$H_{\text{sp}}=H_{\text{sp}}^*$。因此破坏了时间反演对称性的属于A类的单粒子哈密顿量（例如Haldane的六角晶格模型\cite{Haldane1988}和Qi-Wu-Zhang模型\cite{Qi2006}）都是不适用的。通过令$c_1 = 0$（即，在Lorentz不变线上)，并且在低能极限下$\omega \rightarrow 0$，
 式\eqref{hij}中的所有非对角贡献都是零，
-所以通常定义的Higgs振幅模是良好定义的。
+所以通常定义的（低能极限下的）Higgs振幅模是良好定义的。
 这解释了为什么在图\ref{pbcobc}中，对于任意填充数，完全的Higgs振幅/相位模在低能极限下会持续存在。
-注意到在Lorentz不变线上，
-容易证明$c_l |_{\text{LIL}} =\mathcal{O} (p^{- l+ 1})$，对于$l \geq 2$。
-所以在大$p$极限下，相对于其他$c_l$，$l>2$，只有$c_2$能留下来，所以这时非对角元也等于零。
+注意到在Lorentz不变线（LIL）上，
+容易证明$c_l |_{\text{LIL}} =\mathcal{O} (p^{- l+ 1})$，$l = 2,3,\dots$。
+所以在大$p$极限下，相对于其他$c_l$，$l>2$，只有$c_2$能留下来，这时非对角元也等于零。
 此外，
-由于跃迁项并没有发生改变，这两种解耦的模直接继承了$d$维SSH模型的拓扑。
-最后，在有限填充情况下，即使在Lorentz不变线上，非对角元仍有耦合，其强度由$1/p$压制，并且是在位的、满足空间反演对称性的。所以激发谱的拓扑性质在有限填充下仍然存在，但是高能量态的振幅-相位特征逐渐消失。
+由于跃迁项并没有发生改变，这两种解耦的模直接继承了$d$维SSH模型的拓扑。这解释了本章第二节的计算，即大整数填充极限下有完整的Higgs振幅能带。
+最后，在有限填充情况下，即使在Lorentz不变线上，非对角元仍有耦合，其强度由$1/p$压制；由于这些耦合是在位的、满足空间反演对称性的，所以拓扑性质并没有改变。这解释了本章第三节的计算，即激发谱的拓扑性质在有限填充下仍然存在，但是高能量态的振幅-相位特征逐渐消失。
 
 \section{小结和讨论}
 
-用$d$维的SSHBH模型作为例子，我们证实了在量子相变临界点附近拓扑的Higgs振幅模存在。具体地，我们展示了在大填充数极限下衍生的拓扑Higgs振幅能带和相位能带，它们的拓扑性质直接继承于$d$维的SSH模型，即体拓扑不变量是一个$\mathbb Z_2$数，被称为向量化的辛极化，其量子化的性质是由空间反演对称性保护的。我们还数值证明了体边对应关系。
-当减小填充数时，激发谱的拓扑性质没有变化，但是高能量态的振幅-相位特性逐渐消失。我们利用定义的一个平坦度来量化了这些激发态的振幅/相位振荡特征，并且数值地展示了，在实验可实现的范围内，当填充数取到足够大，拓扑边界态变成支配的Higgs振幅模特征。最后，利用强耦合RPA方法，我们分析了得到低能有效作用量，互补、统一地解释了前述结果。
+用$d$维的SSHBH模型作为例子，我们证实了在量子相变临界点附近拓扑的Higgs振幅模存在。具体地，我们展示了在大填充数极限下涌现的拓扑Higgs振幅能带和相位能带，它们的拓扑性质直接继承于$d$维的SSH模型，即体拓扑不变量是一个$\mathbb Z_2$数，被称为向量化的辛极化，其量子化的性质是由空间反演对称性保护的。我们还数值证明了体边对应关系。
+当减小填充数时，激发谱的拓扑性质没有变化，但是高能量态的振幅-相位特性逐渐消失。我们利用定义的一个平坦度来量化了这些激发态的振幅/相位振荡特征，并且数值地展示了，在实验可实现的大填充数下，由Higgs振幅模主导的拓扑边界态已经涌现。最后，利用强耦合RPA方法我们得到了低能有效作用量；通过一个Ginzberg-Landau分析，互补、统一地解释了前述结果。
 
-有一些直接的问题留给未来继续研究。这里讨论的拓扑Higgs振幅模只在经典（二次型）层面是长寿命的，它们是否能在考虑量子修正时仍然存活？它们是否是过阻尼的 \cite{Podolsky2011}？
-另外，一个有意思的推广是，类似的拓扑Higgs振幅模是否在其他凝聚态体系存在：例如当拓扑超导体或者拓扑量子磁性体系处在量子临界点附近时。
+在本章计算中，我们忽略了一个全局的抛物线型原子束缚势，这种情况可以通过结合光晶格势和一个盒形限制势实现\cite{Gaunt2013}。由于振幅扰动直接对应时间调制晶格深度的响应\cite{Huber2007}，我们预期Higgs振幅拓扑边缘态可以通过晶格调制光谱中出现在能带带隙间的尖锐峰来测量。类似的方案也被文献\cite{Nakayama2015}提到用来测量Higgs束缚态。
+
+有一些直接的问题留给未来继续研究。这里讨论的拓扑Higgs振幅模只在经典（二次型）层面是长寿命的，它们是否能在考虑量子修正后仍然存活？它们是否是过阻尼的 \cite{Podolsky2011}？
+另外，一个有意思的推广是，类似的拓扑Higgs振幅模是否在其他凝聚态体系存在，例如当拓扑超导体或者拓扑量子磁性体系处在量子临界点附近时。
