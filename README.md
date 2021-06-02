@@ -1,12 +1,14 @@
 # Junsen Wang's PhD Thesis
 
-**This thesis is still under preparation.**
+<del>**This thesis is still under preparation.**</del>
+
+This is the final version.
 
 ## Reference
 
 ```latex
 @phdthesis{wang2021topo,
-  title={(TBD)},
+  title={Symmetry-protected topological excitations of Bose superfluids},
   author={Wang, Junsen},
   year={2021},
   school={University of Science and Technology of China}
